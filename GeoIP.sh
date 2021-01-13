@@ -1,5 +1,5 @@
 #!/bin/bash
-LATLON=$(wget -o /dev/null -O - http://freegeoip.net/xml | awk -F'<|>' '/Latitude|Longitude/ {print $3}')
+LATLON=$(wget -o /dev/null -O - https://freegeoip.app/xml/ | awk -F'<|>' '/Latitude|Longitude/ {print $3}')
 
 LAT=$(cut -f1 -d" " <<< $LATLON)
 LON=$(cut -f2 -d" " <<< $LATLON)
