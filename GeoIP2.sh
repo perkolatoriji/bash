@@ -1,5 +1,5 @@
 #!/bin/bash
-LATLON=$(curl https://freegeoip.app/xml/ | awk -F'<|>' '/Latitude|Longitude/ {print $3}')
+LATLON=$(curl -s https://freegeoip.app/xml/ | awk -F'<|>' '/Latitude|Longitude/ {print $3}')
 
 LAT=$(cut -f1 -d" " <<< $LATLON)
 LON=$(cut -f2 -d" " <<< $LATLON)
